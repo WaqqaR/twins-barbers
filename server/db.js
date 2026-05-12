@@ -5,8 +5,10 @@ import { nanoid } from 'nanoid';
 
 // libSQL works both as a local SQLite file (DATABASE_URL=file:server/local.db)
 // and against a hosted Turso database (DATABASE_URL=libsql://...; DATABASE_AUTH_TOKEN=...).
-const url = process.env.DATABASE_URL || 'file:server/local.db';
-const authToken = process.env.DATABASE_AUTH_TOKEN || undefined;
+// .trim() guards against stray whitespace/newlines when these are pasted into a
+// hosting dashboard — an embedded newline in the token makes the auth header invalid.
+const url = (process.env.DATABASE_URL || 'file:server/local.db').trim();
+const authToken = (process.env.DATABASE_AUTH_TOKEN || '').trim() || undefined;
 
 export const db = createClient({ url, authToken });
 
