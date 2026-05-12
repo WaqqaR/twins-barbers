@@ -119,8 +119,10 @@ const shop = {
   gallery: [
     { src: '/images/interior-1.jpg', alt: 'Inside Twins Barbers — hexagon LED ceiling and marble floor', wide: true },
     { src: '/images/interior-2.jpg', alt: 'The chairs at Twins Barbers, with the kids’ car chair', wide: true },
-    { src: '/images/storefront.jpg', alt: 'Twins Barbers shopfront on Oxford Road, Kidlington' },
-    { src: '/images/price-list.jpg', alt: 'Twins Barbers price list' },
+    { src: '/images/cut-1.jpg', alt: 'Curly top with a clean low drop fade' },
+    { src: '/images/cut-2.jpg', alt: 'Textured grown-out cut with a low taper' },
+    { src: '/images/cut-3.jpg', alt: 'Short crop with a sharp faded beard' },
+    { src: '/images/cut-4.jpg', alt: 'Textured crop with a mid skin fade' },
   ],
 
   // ── Hero / branding imagery ────────────────────────────────────────────────
