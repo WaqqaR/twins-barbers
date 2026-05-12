@@ -1,0 +1,11 @@
+node_modules
+dist
+.env
+.env.local
+*.local
+local.db
+local.db-*
+.vercel
+.DS_Store
+npm-debug.log*
+.claude/settings.local.json

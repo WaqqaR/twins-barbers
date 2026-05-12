@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-ink font-body antialiased;
+  }
+  /* Anchor offset so section headings aren't hidden under the sticky navbar. */
+  section[id],
+  div[id].scroll-anchor {
+    scroll-margin-top: 5.5rem;
+  }
+  h1, h2, h3 {
+    @apply font-display tracking-wide;
+  }
+  ::selection {
+    @apply bg-gold text-ink;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-widest transition focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cream disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-gold {
+    @apply btn bg-gold text-ink hover:bg-goldsoft;
+  }
+  .btn-dark {
+    @apply btn bg-ink text-cream hover:bg-charcoal;
+  }
+  .btn-ghost {
+    @apply btn border border-ink/20 bg-transparent text-ink hover:border-ink/40 hover:bg-ink/5;
+  }
+  .btn-outline-light {
+    @apply btn border border-cream/40 text-cream hover:bg-cream/10;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.3em] text-gold;
+  }
+  .card {
+    @apply rounded-2xl border border-ink/10 bg-white shadow-sm;
+  }
+  .field {
+    @apply w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-ink placeholder:text-ink/40 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-ink/80;
+  }
+  .chip {
+    @apply rounded-full border border-ink/15 px-3 py-1 text-xs font-medium text-ink/70;
+  }
+}
