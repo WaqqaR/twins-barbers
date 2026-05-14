@@ -45,13 +45,13 @@ const shop = {
   // 0 = Sunday … 6 = Saturday. Either { closed: true } or one+ open intervals
   // in 24h "HH:MM" form. Multiple intervals model a lunch break.
   hours: {
-    0: { closed: true },                              // Sunday
+    0: { intervals: [['10:00', '17:00']] },           // Sunday
     1: { intervals: [['09:00', '19:00']] },           // Monday
     2: { intervals: [['09:00', '19:00']] },           // Tuesday
     3: { intervals: [['09:00', '19:00']] },           // Wednesday
-    4: { intervals: [['10:00', '17:00']] },           // Thursday (shorter day)
+    4: { intervals: [['09:00', '19:00']] },           // Thursday
     5: { intervals: [['09:00', '19:00']] },           // Friday
-    6: { intervals: [['09:00', '19:00']] },           // Saturday
+    6: { intervals: [['08:30', '18:30']] },           // Saturday
   },
 
   // Note shown near the hours — Twins Barbers takes appointments outside hours too.
@@ -155,7 +155,7 @@ const shop = {
     ],
   },
 
-  highlights: ['Walk-ins welcome', 'Online booking', 'Open 6 days a week'],
+  highlights: ['Walk-ins welcome', 'Online booking', 'Open 7 days a week'],
 };
 
 // ── Derived helpers (don't edit) ─────────────────────────────────────────────

@@ -240,7 +240,7 @@ export default function Book() {
             <div className="space-y-7">
               <div>
                 <h2 className="mb-3 text-xl text-ink">Pick a day</h2>
-                <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1 sm:grid sm:grid-cols-4 sm:gap-2 sm:overflow-visible md:grid-cols-7">
+                <div className="grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-7">
                   {days.slice(0, 28).map((d) => {
                     const selected = dateStr === d.ds;
                     return (
@@ -249,7 +249,7 @@ export default function Book() {
                         type="button"
                         disabled={d.closed}
                         onClick={() => pickDate(d.ds)}
-                        className={`flex min-w-[72px] flex-col items-center rounded-xl border px-3 py-2.5 text-center transition ${
+                        className={`flex min-w-0 flex-col items-center rounded-xl border px-1.5 py-2 text-center transition sm:px-3 sm:py-2.5 ${
                           d.closed
                             ? 'cursor-not-allowed border-ink/5 bg-ink/[0.03] text-ink/25'
                             : selected
@@ -257,9 +257,9 @@ export default function Book() {
                               : 'border-ink/10 bg-white text-ink hover:border-ink/25'
                         }`}
                       >
-                        <span className="text-[11px] uppercase tracking-widest">{d.date.toLocaleDateString(undefined, { weekday: 'short' })}</span>
-                        <span className="font-display text-2xl leading-tight">{d.date.getDate()}</span>
-                        <span className="text-[11px] text-current/70">{d.isToday ? 'Today' : d.date.toLocaleDateString(undefined, { month: 'short' })}</span>
+                        <span className="text-[10px] uppercase tracking-widest sm:text-[11px]">{d.date.toLocaleDateString(undefined, { weekday: 'short' })}</span>
+                        <span className="font-display text-xl leading-tight sm:text-2xl">{d.date.getDate()}</span>
+                        <span className="text-[10px] text-current/70 sm:text-[11px]">{d.isToday ? 'Today' : d.date.toLocaleDateString(undefined, { month: 'short' })}</span>
                         {d.closed && <span className="mt-0.5 text-[10px] uppercase">Closed</span>}
                       </button>
                     );
@@ -281,13 +281,13 @@ export default function Book() {
                     </div>
                   )}
                   {!slotsLoading && !slotsError && slots && slots.length > 0 && (
-                    <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-6">
+                    <div className="grid grid-cols-3 gap-1.5 sm:grid-cols-4 sm:gap-2 md:grid-cols-6">
                       {slots.map((s) => (
                         <button
                           key={s.min}
                           type="button"
                           onClick={() => setSlotMin(s.min)}
-                          className={`rounded-lg border px-2 py-2.5 text-sm font-medium transition ${
+                          className={`min-w-0 rounded-lg border px-1 py-2 text-xs font-medium transition sm:px-2 sm:py-2.5 sm:text-sm ${
                             slotMin === s.min ? 'border-gold bg-ink text-cream ring-2 ring-gold/30' : 'border-ink/10 bg-white text-ink hover:border-ink/25'
                           }`}
                         >
